@@ -6,6 +6,7 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from urllib.parse import urlparse
+import time
 
 # Global variables
 base_url = None
@@ -34,7 +35,7 @@ def generate_auth_url():
         
         return temp_auth_url
     except AttributeError:
-        print("Error: Invalid base_url provided.")
+        print("Error: Invalid base_url provided")
         sys.exit(1)
 
 def authenticate(api_key):
@@ -66,7 +67,7 @@ def authenticate(api_key):
             return None
         
         if debug:
-            print("Successfully authenticated.")
+            print("Successfully authenticated")
         
         return access_token
     except requests.exceptions.RequestException as e:
@@ -80,7 +81,7 @@ def read_repo_urls(file_path):
         with open(file_path, 'r') as file:
             repo_urls = [line.strip() for line in file]
         if debug:
-            print(f"Read {len(repo_urls)} repository URLs from file.")
+            print(f"Found {len(repo_urls)} repository URLs")
         return repo_urls
     except Exception as e:
         print(f"An error occurred while reading the repository URLs: {e}")
@@ -91,6 +92,9 @@ def get_repo_info(repo_url, github_token=None, gitlab_token=None, bitbucket_toke
         parsed_url = urlparse(repo_url)
         project_repo_info = {}
         headers = {}
+        
+        if debug:
+            print(f'Identifying project information for repo: {repo_url}')
 
         # GitHub
         if 'github.com' in parsed_url.netloc:
@@ -136,16 +140,16 @@ def get_repo_info(repo_url, github_token=None, gitlab_token=None, bitbucket_toke
             print(f'Response text: {response.text}')
             sys.exit(1)
         
-        response.raise_for_status()  # This will also check for error status codes, but it's good to have a custom message above
+        response.raise_for_status()
         repo_info = response.json()
 
-        # Determine projectName
+        # Determine project_name
         if project_repo_info['platform'] == 'GitHub' or project_repo_info['platform'] == 'GitLab':
-            project_repo_info['projectName'] = f"{project_repo_info['platform']}-{repo_info.get('full_name')}"
+            project_repo_info['project_name'] = f"{project_repo_info['platform']}-{repo_info.get('full_name')}"
         elif project_repo_info['platform'] == 'Bitbucket':
-            project_repo_info['projectName'] = f"{project_repo_info['platform']}-{repo_info.get('full_name')}"
+            project_repo_info['project_name'] = f"{project_repo_info['platform']}-{repo_info.get('full_name')}"
         elif project_repo_info['platform'] == 'AzureDevOps':
-            project_repo_info['projectName'] = f"{project_repo_info['platform']}-{repo_info.get('project', {}).get('name')}-{repo_info.get('name')}"
+            project_repo_info['project_name'] = f"{project_repo_info['platform']}-{repo_info.get('project', {}).get('name')}-{repo_info.get('name')}"
 
         if project_repo_info['platform'] == 'GitHub' or project_repo_info['platform'] == 'GitLab':
             project_repo_info['primary_branch'] = repo_info.get('default_branch')
@@ -154,8 +158,13 @@ def get_repo_info(repo_url, github_token=None, gitlab_token=None, bitbucket_toke
         elif project_repo_info['platform'] == 'AzureDevOps':
             project_repo_info['primary_branch'] = repo_info.get('defaultBranch')
 
+        # Extract the branch name from 'refs/heads/' if present
+        if 'refs/heads/' in project_repo_info['primary_branch']:
+            project_repo_info['primary_branch'] = project_repo_info['primary_branch'].split('refs/heads/')[-1]
+
         if debug:
-            print(f'Project and repo information: {project_repo_info}')
+            for key, value in project_repo_info.items():
+                print(f"{key.replace('_', ' ').title()}: {value}")
 
         return project_repo_info
 
@@ -187,11 +196,13 @@ def check_project_exists(project_name):
         response.raise_for_status()
         projects = response.json()
         
-        for project in projects['projects']:
-            if project.get('name') == project_name:
-                if debug:
-                    print(f"Project found: {project_name}")
-                return project.get('id')
+        # Check if the 'projects' key is not None before iterating
+        if projects.get('projects') is not None:
+            for project in projects['projects']:
+                if project.get('name') == project_name:
+                    if debug:
+                        print(f"Project found: {project_name}")
+                    return project.get('id')
         
         if debug:
             print(f"No project found for: {project_name}")
@@ -200,7 +211,11 @@ def check_project_exists(project_name):
         print(f"An error occurred while checking for project existence: {e}")
         sys.exit(1)
 
+
 def create_project(project_name, repo_url, main_branch):
+    if debug:
+        print(f"Creating project: {project_name}")
+    
     headers = {
         'Accept': 'application/json; version=1.0',
         'Authorization': f'Bearer {auth_token}',
@@ -238,11 +253,11 @@ def create_project(project_name, repo_url, main_branch):
         return None
     
     if debug:
-        print(f"Project {project_name} created successfully with project ID: {project_id}.")
+        print(f"Project {project_name} created successfully with project ID: {project_id}")
     
     return project_id
 
-def start_scan(repo_info, repo_url):
+def start_scan(repo_info, repo_url, scan_types):
     # Build the headers for the request
     headers = {
         'Accept': 'application/json; version=1.0',
@@ -250,11 +265,45 @@ def start_scan(repo_info, repo_url):
         'Content-Type': 'application/json; version=1.0',
         'CorrelationId': ''
     }
-    
-    # Extract the branch name from 'refs/heads/' if present
-    if 'refs/heads/' in repo_info['primary_branch']:
-        repo_info['primary_branch'] = repo_info['primary_branch'].split('refs/heads/')[-1]
-    
+
+    # Initialize the config list
+    config = []
+
+    # Append SAST config if requested
+    if scan_types.get('sast'):
+        sast_config = {
+            "type": "sast",
+            "value": {}
+        }
+        # Include the presetName only if provided (i.e. the sast value is not True here)
+        if scan_types.get('sast') is not True:
+            sast_config["value"]["presetName"] = scan_types['sast']
+        config.append(sast_config)
+
+    # Append SCA config if requested
+    if scan_types.get('sca'):
+        sca_config = {
+            "type": "sca",
+            "value": {}
+        }
+        config.append(sca_config)
+
+    # Append IaC config if requested
+    if scan_types.get('iac'):
+        iac_config = {
+            "type": "kics",
+            "value": {}
+        }
+        config.append(iac_config)
+
+    # Append API config if requested and ensure SAST is included
+    if scan_types.get('api'):
+        api_config = {
+            "type": "apisec",
+            "value": {}
+        }
+        config.append(api_config)
+
     # Build the handler object for the request payload
     handler = {
         "repoUrl": repo_url,
@@ -263,35 +312,13 @@ def start_scan(repo_info, repo_url):
             "ScanMonster Scan": ""
             }
     }
-    
+
     # Build the project object for the request payload
     project = {
         "id": repo_info['projectId'],
         "tags": {}
     }
- 
-    # Build the config object for the request payload
-    config = [
-        {
-            "type": "sast",
-            "value": {
-                "incremental": "false",
-                "presetName": "Top Tier",
-                "engineVerbose": "false"
-            }
-        },
-        {
-            "type": "kics",
-            "value": {
-            }
-        },
-        {
-            "type": "sca",
-            "value": {
-            }
-        }
-    ]
- 
+
     # Build the request payload
     payload = {
         "type": "git",
@@ -303,7 +330,10 @@ def start_scan(repo_info, repo_url):
             },
         "branch": repo_info['primary_branch']
     }
-      
+    
+    if debug:
+        print(f"Prepared scan configuration for {repo_info['project_name']}")
+
     # Send the request to the Checkmarx API
     scans_url = f"{base_url}/api/scans/"
     try:
@@ -314,8 +344,8 @@ def start_scan(repo_info, repo_url):
         if response.content:
             print(f"Response content: {response.content}")
         sys.exit(1)
-    
-    print(f"Started scan for {repo_info['projectName']}")
+
+    print(f"Started scan for {repo_info['project_name']}")
 
 def main():
     global base_url
@@ -325,6 +355,7 @@ def main():
     global auth_token
     global iam_base_url
 
+    # Parse and handle various CLI flags
     parser = argparse.ArgumentParser(description='Initiate scans on a set of repositories using Checkmarx One APIs')
     parser.add_argument('--base_url', required=True, help='Region Base URL')
     parser.add_argument('--iam_base_url', required=False, help='Region IAM Base URL')
@@ -335,6 +366,19 @@ def main():
     parser.add_argument('--gitlab_token', required=False, help='GitLab personal access token')
     parser.add_argument('--bitbucket_token', required=False, help='Bitbucket personal access token')
     parser.add_argument('--azure_token', required=False, help='Azure DevOps personal access token')
+
+    def parse_sast_arg(value):
+        if value is None:
+            return False
+        elif value == '':
+            return True
+        return value
+
+    parser.add_argument('--sast', nargs='?', const=True, default=False, type=parse_sast_arg, help='Enable SAST scan. Optionally specify a SAST preset.')
+    parser.add_argument('--sca', action='store_true', help='Enable SCA scan.')
+    parser.add_argument('--iac', action='store_true', help='Enable IaC scan.')
+    parser.add_argument('--api', action='store_true', help='Enable API scan.')
+    parser.add_argument('--space_scans', type=int, help='Number of minutes to wait between scans')
     parser.add_argument('--debug', action='store_true', help='Enable debug output')
 
     args = parser.parse_args()
@@ -346,7 +390,35 @@ def main():
     azure_token = args.azure_token
     debug = args.debug
     
-    # Set iam_base_url if it's provided as an argument
+    scan_types = {
+        'sast': args.sast,
+        'sca': args.sca,
+        'iac': args.iac,
+        'api': args.api
+    }
+
+    # If no scan types are specified, default to all scan types
+    if not any(scan_types.values()):
+        scan_types = {k: True for k in scan_types}
+    
+    # If an API scan is requested, ensure that a SAST scan is also enabled
+    if scan_types.get('api') and not scan_types.get('sast'):
+        scan_types['sast'] = True
+    
+    # Read in repos
+    repo_urls = read_repo_urls(args.repo_file)
+    
+    # Provide output to the user
+    enabled_scans = ', '.join([k.upper() for k, v in scan_types.items() if v])
+    print(f"Initiating scanning process on {len(repo_urls)} repositories using the following engine(s): {enabled_scans}")
+
+    if debug and scan_types.get('sast'):
+        if scan_types.get('sast') is not True:
+            print(f"SAST scan will use the preset '{scan_types['sast']}'")
+        else:
+            print(f"SAST scan will use the default preset")
+        
+    # Authenticate to CxOne
     if args.iam_base_url:
         iam_base_url = args.iam_base_url
     
@@ -355,17 +427,27 @@ def main():
     
     if auth_token is None:
         return
-
-    repo_urls = read_repo_urls(args.repo_file)
     
-    for repo_url in repo_urls:
+    # Iterate through repos to check if projects exist, create projects (if necessary), and start scans
+    for index, repo_url in enumerate(repo_urls):
+        if(debug):
+            print(f"Preparing to scan repository {index + 1} of {len(repo_urls)}: {repo_url}")
+    
         repo_info = get_repo_info(repo_url, github_token, gitlab_token, bitbucket_token, azure_token)
-        repo_info['projectId'] = check_project_exists(repo_info['projectName'])
-        
+        repo_info['projectId'] = check_project_exists(repo_info['project_name'])
+
         if repo_info['projectId'] is None:
-            repo_info['projectId'] = create_project(repo_info['projectName'], repo_url, repo_info['primary_branch'])
-        
-        start_scan(repo_info, repo_url)
+            repo_info['projectId'] = create_project(repo_info['project_name'], repo_url, repo_info['primary_branch'])
+
+        start_scan(repo_info, repo_url, scan_types)
+
+        # If space_scans is set and it's not the last repository, wait the specified time
+        if args.space_scans and index < len(repo_urls) - 1:
+            if debug:
+                print(f"Waiting {args.space_scans} minute(s) before starting the next scan...")
+            time.sleep(args.space_scans * 60)  # Wait time is in seconds, so multiply by 60
+    
+    print(f"All {len(repo_urls)} scans successfully started")
 
 if __name__ == "__main__":
     main()
