@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from urllib.parse import urlparse
 import time
+import logging
 
 # Global variables
 base_url = None
@@ -15,6 +16,9 @@ auth_url = None
 iam_base_url = None
 auth_token = None
 debug = False
+
+# Configure logging
+logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime)s:%(levelname)s:%(message)s')
 
 def generate_auth_url():
     global iam_base_url
@@ -136,9 +140,9 @@ def get_repo_info(repo_url, github_token=None, gitlab_token=None, bitbucket_toke
         
         # Check for a successful response
         if response.status_code not in (200, 203):
-            print(f'Error: Received status code {response.status_code} from {api_url}')
-            print(f'Response text: {response.text}')
-            sys.exit(1)
+            logging.error(f'Error: Received status code {response.status_code} from {api_url}')
+            logging.error(f'Response text: {response.text}')
+            return None
         
         response.raise_for_status()
         repo_info = response.json()
@@ -168,13 +172,14 @@ def get_repo_info(repo_url, github_token=None, gitlab_token=None, bitbucket_toke
 
         return project_repo_info
 
+    # Most errors will cause an exit(1) but any issues with getting the repo info will just 
     except requests.exceptions.RequestException as e:
-        print(f'An error occurred while fetching the repository info: {e}')
-        sys.exit(1)
+        logging.error(f'An error occurred while fetching the repository info for {repo_url}: {e}')
+        return None
 
     except Exception as e:
-        print(f'An unexpected error occurred: {e}')
-        sys.exit(1)
+        logging.error(f'An unexpected error occurred for {repo_url}: {e}')
+        return None
 
 def check_project_exists(project_name):
     if debug:
@@ -428,18 +433,28 @@ def main():
     if auth_token is None:
         return
     
+    errors = 0
+    started = 0
+    
     # Iterate through repos to check if projects exist, create projects (if necessary), and start scans
     for index, repo_url in enumerate(repo_urls):
         if(debug):
             print(f"Preparing to scan repository {index + 1} of {len(repo_urls)}: {repo_url}")
     
         repo_info = get_repo_info(repo_url, github_token, gitlab_token, bitbucket_token, azure_token)
+        
+        if repo_info is None:
+            errors += 1
+            print(f"Encountered error fetching info from repository {repo_url}; error logged")
+            continue  # Skip to the next repository if repo_info is None
+        
         repo_info['projectId'] = check_project_exists(repo_info['project_name'])
 
         if repo_info['projectId'] is None:
             repo_info['projectId'] = create_project(repo_info['project_name'], repo_url, repo_info['primary_branch'])
 
         start_scan(repo_info, repo_url, scan_types)
+        started += 1
 
         # If space_scans is set and it's not the last repository, wait the specified time
         if args.space_scans and index < len(repo_urls) - 1:
@@ -447,7 +462,10 @@ def main():
                 print(f"Waiting {args.space_scans} minute(s) before starting the next scan...")
             time.sleep(args.space_scans * 60)  # Wait time is in seconds, so multiply by 60
     
-    print(f"All {len(repo_urls)} scans successfully started")
+    if errors > 0:
+        print(f"Errors encountered with {errors} repositories; check error log for details")
+    
+    print(f"Successfully started {started} scans")
 
 if __name__ == "__main__":
     main()
