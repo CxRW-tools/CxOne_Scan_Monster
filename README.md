@@ -2,7 +2,7 @@
 
 ## Summary
 
-Scan Monster is a powerful automation tool for initiating scans on multiple repositories using the Checkmarx One APIs. It supports several types of scans, including SAST, SCA, IaC, and API, with the flexibility to specify scan presets and intervals between scans. Designed for integration into CI/CD pipelines or for ad hoc scan operations, it simplifies vulnerability assessments across codebases.
+Scan Monster is a powerful automation tool for initiating scans on multiple repositories using the Checkmarx One APIs. It supports several types of scans, including SAST, SCA, IaC, and API, with the flexibility to specify scan presets and intervals between scans. Designed for ad hoc scan operations, it simplifies bulk vulnerability assessments across codebases.
 
 ## Syntax and Arguments
 
