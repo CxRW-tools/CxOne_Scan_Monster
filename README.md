@@ -22,6 +22,10 @@ python scan_monster.py --base_url BASE_URL --tenant_name TENANT_NAME --api_key A
 ### Optional Arguments
 
 - `--iam_base_url`: Optional IAM base URL. Defaults to the same as `base_url` if not provided.
+- `--github_token`: Personal access token for GitHub repositories.
+- `--gitlab_token`: Personal access token for GitLab repositories.
+- `--bitbucket_token`: Personal access token for Bitbucket repositories.
+- `--azure_token`: Personal access token for Azure DevOps repositories.
 - `--sast [SAST_PRESET]`: Enable SAST scan with an optional preset name.
 - `--sca`: Enable SCA scan. (Flag, no value required)
 - `--iac`: Enable IaC scan. (Flag, no value required)
