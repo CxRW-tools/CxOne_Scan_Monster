@@ -1,10 +1,8 @@
 import sys
 import json
-import requests  # version 2.31.0
+import requests
 import datetime
 import argparse
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from threading import Lock
 from urllib.parse import urlparse
 import time
 import logging
