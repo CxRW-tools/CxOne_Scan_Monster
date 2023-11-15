@@ -4,6 +4,13 @@
 
 Scan Monster is a powerful automation tool for initiating scans on multiple repositories using the Checkmarx One APIs. It supports several types of scans, including SAST, SCA, IaC, and API, with the flexibility to specify scan presets and intervals between scans. Designed for ad hoc scan operations, it simplifies bulk vulnerability assessments across codebases.
 
+1. Install nessesary dependencies for python
+   ex: $ pip install requests
+2. create repos.txt file that has the repos you want to scan listed line by line
+   ex: $ https://github.com/appsecco/dvja
+3. Do not edit the scan_monster.py file, only put your arguments in the command
+
+
 ## Syntax and Arguments
 
 Execute the script using the following command line:
