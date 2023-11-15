@@ -1,0 +1,136 @@
+2023-11-15 07:33:58,730:ERROR:An unexpected error occurred for # Can't Scan: Unsupported platform for repository URL: # Can't Scan
+2023-11-15 07:33:58,731:ERROR:An unexpected error occurred for #"https://github.com/colloquy/colloquy",: Unsupported platform for repository URL: #"https://github.com/colloquy/colloquy",
+2023-11-15 07:33:58,731:ERROR:An unexpected error occurred for #"https://github.com/graphile/postgraphile",: Unsupported platform for repository URL: #"https://github.com/graphile/postgraphile",
+2023-11-15 07:33:58,732:ERROR:An unexpected error occurred for #"https://github.com/grafana/grafana",: Unsupported platform for repository URL: #"https://github.com/grafana/grafana",
+2023-11-15 07:33:58,732:ERROR:An unexpected error occurred for #"https://github.com/etcd-io/etcd",: Unsupported platform for repository URL: #"https://github.com/etcd-io/etcd",
+2023-11-15 07:33:58,733:ERROR:An unexpected error occurred for #"https://github.com/hashicorp/vault",: Unsupported platform for repository URL: #"https://github.com/hashicorp/vault",
+2023-11-15 07:33:58,733:ERROR:An unexpected error occurred for #"https://github.com/h5bp/html5-boilerplate",: Unsupported platform for repository URL: #"https://github.com/h5bp/html5-boilerplate",
+2023-11-15 07:33:58,733:ERROR:An unexpected error occurred for #"https://github.com/IdentityServer/IdentityServer4",: Unsupported platform for repository URL: #"https://github.com/IdentityServer/IdentityServer4",
+2023-11-15 07:33:58,734:ERROR:An unexpected error occurred for #"https://github.com/ansible/awx",: Unsupported platform for repository URL: #"https://github.com/ansible/awx",
+2023-11-15 07:33:58,734:ERROR:An unexpected error occurred for #"https://github.com/OpenRA/OpenRA",: Unsupported platform for repository URL: #"https://github.com/OpenRA/OpenRA",
+2023-11-15 07:33:58,734:ERROR:An unexpected error occurred for #"https://github.com/jef/streetmerchant",: Unsupported platform for repository URL: #"https://github.com/jef/streetmerchant",
+2023-11-15 07:33:58,735:ERROR:An unexpected error occurred for #"https://github.com/YAFNET/YAFNET",: Unsupported platform for repository URL: #"https://github.com/YAFNET/YAFNET",
+2023-11-15 07:33:58,735:ERROR:An unexpected error occurred for #"https://github.com/MarimerLLC/csla",: Unsupported platform for repository URL: #"https://github.com/MarimerLLC/csla",
+2023-11-15 07:33:58,736:ERROR:An unexpected error occurred for #"https://github.com/coreui/coreui-free-bootstrap-admin-template",: Unsupported platform for repository URL: #"https://github.com/coreui/coreui-free-bootstrap-admin-template",
+2023-11-15 07:33:58,736:ERROR:An unexpected error occurred for #"https://github.com/Chocobozzz/PeerTube",: Unsupported platform for repository URL: #"https://github.com/Chocobozzz/PeerTube",
+2023-11-15 07:33:58,736:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,736:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,736:ERROR:An unexpected error occurred for # 0-10k: Unsupported platform for repository URL: # 0-10k
+2023-11-15 07:33:58,737:ERROR:An unexpected error occurred for "https://github.com/snoopysecurity/dvws",: Unsupported platform for repository URL: "https://github.com/snoopysecurity/dvws",
+2023-11-15 07:33:58,737:ERROR:An unexpected error occurred for "https://github.com/Checkmarx/Goatlin",: Unsupported platform for repository URL: "https://github.com/Checkmarx/Goatlin",
+2023-11-15 07:33:58,737:ERROR:An unexpected error occurred for "https://github.com/htbridge/pivaa",: Unsupported platform for repository URL: "https://github.com/htbridge/pivaa",
+2023-11-15 07:33:58,737:ERROR:An unexpected error occurred for "https://github.com/snoopysecurity/dvws-node",: Unsupported platform for repository URL: "https://github.com/snoopysecurity/dvws-node",
+2023-11-15 07:33:58,737:ERROR:An unexpected error occurred for "https://github.com/dineshshetty/Android-InsecureBankv2",: Unsupported platform for repository URL: "https://github.com/dineshshetty/Android-InsecureBankv2",
+2023-11-15 07:33:58,738:ERROR:An unexpected error occurred for "https://github.com/CyberScions/Digitalbank",: Unsupported platform for repository URL: "https://github.com/CyberScions/Digitalbank",
+2023-11-15 07:33:58,738:ERROR:An unexpected error occurred for "https://github.com/lukencode/FluentEmail",: Unsupported platform for repository URL: "https://github.com/lukencode/FluentEmail",
+2023-11-15 07:33:58,738:ERROR:An unexpected error occurred for "https://github.com/appsecco/dvja",: Unsupported platform for repository URL: "https://github.com/appsecco/dvja",
+2023-11-15 07:33:58,738:ERROR:An unexpected error occurred for "https://github.com/CSPF-Founder/JavaVulnerableLab",: Unsupported platform for repository URL: "https://github.com/CSPF-Founder/JavaVulnerableLab",
+2023-11-15 07:33:58,738:ERROR:An unexpected error occurred for "https://github.com/dan7800/VulnerableAndroidAppOracle",: Unsupported platform for repository URL: "https://github.com/dan7800/VulnerableAndroidAppOracle",
+2023-11-15 07:33:58,739:ERROR:An unexpected error occurred for "https://github.com/httpie/httpie",: Unsupported platform for repository URL: "https://github.com/httpie/httpie",
+2023-11-15 07:33:58,739:ERROR:An unexpected error occurred for "https://github.com/williamniemiec/nForum",: Unsupported platform for repository URL: "https://github.com/williamniemiec/nForum",
+2023-11-15 07:33:58,739:ERROR:An unexpected error occurred for "https://github.com/losna-project/LOSNA", # 6 kloc: Unsupported platform for repository URL: "https://github.com/losna-project/LOSNA", # 6 kloc
+2023-11-15 07:33:58,739:ERROR:An unexpected error occurred for "https://github.com/iknowjason/hammer",: Unsupported platform for repository URL: "https://github.com/iknowjason/hammer",
+2023-11-15 07:33:58,739:ERROR:An unexpected error occurred for "https://github.com/k-tamura/easybuggy",: Unsupported platform for repository URL: "https://github.com/k-tamura/easybuggy",
+2023-11-15 07:33:58,739:ERROR:An unexpected error occurred for "https://github.com/red-and-black/DjangoGoat",: Unsupported platform for repository URL: "https://github.com/red-and-black/DjangoGoat",
+2023-11-15 07:33:58,739:ERROR:An unexpected error occurred for "https://github.com/snsttr/diwa",: Unsupported platform for repository URL: "https://github.com/snsttr/diwa",
+2023-11-15 07:33:58,739:ERROR:An unexpected error occurred for "https://github.com/RhinoSecurityLabs/cloudgoat",: Unsupported platform for repository URL: "https://github.com/RhinoSecurityLabs/cloudgoat",
+2023-11-15 07:33:58,740:ERROR:An unexpected error occurred for "https://github.com/psiinon/bodgeit",: Unsupported platform for repository URL: "https://github.com/psiinon/bodgeit",
+2023-11-15 07:33:58,740:ERROR:An unexpected error occurred for "https://github.com/m6a-UdS/dvca",: Unsupported platform for repository URL: "https://github.com/m6a-UdS/dvca",
+2023-11-15 07:33:58,740:ERROR:An unexpected error occurred for "https://github.com/kravietz/DropGoat",: Unsupported platform for repository URL: "https://github.com/kravietz/DropGoat",
+2023-11-15 07:33:58,740:ERROR:An unexpected error occurred for "https://github.com/nvisium-jack-mannino/OWASP-GoatDroid-Project", # 1 kloc: Unsupported platform for repository URL: "https://github.com/nvisium-jack-mannino/OWASP-GoatDroid-Project", # 1 kloc
+2023-11-15 07:33:58,740:ERROR:An unexpected error occurred for "https://github.com/CSPF-Founder/DodoVulnerableBank", # 1 kloc: Unsupported platform for repository URL: "https://github.com/CSPF-Founder/DodoVulnerableBank", # 1 kloc
+2023-11-15 07:33:58,740:ERROR:An unexpected error occurred for "https://github.com/interference-security/DVWS", # 1 kloc: Unsupported platform for repository URL: "https://github.com/interference-security/DVWS", # 1 kloc
+2023-11-15 07:33:58,741:ERROR:An unexpected error occurred for "https://github.com/payatu/diva-android", # 1 kloc: Unsupported platform for repository URL: "https://github.com/payatu/diva-android", # 1 kloc
+2023-11-15 07:33:58,741:ERROR:An unexpected error occurred for "https://github.com/yusufsefasezer/java-jsp-diary", # 1 kloc: Unsupported platform for repository URL: "https://github.com/yusufsefasezer/java-jsp-diary", # 1 kloc
+2023-11-15 07:33:58,741:ERROR:An unexpected error occurred for "https://github.com/FiloSottile/mkcert", # 1 kloc: Unsupported platform for repository URL: "https://github.com/FiloSottile/mkcert", # 1 kloc
+2023-11-15 07:33:58,741:ERROR:An unexpected error occurred for "https://github.com/madhuakula/kubernetes-goat", # 1 kloc: Unsupported platform for repository URL: "https://github.com/madhuakula/kubernetes-goat", # 1 kloc
+2023-11-15 07:33:58,742:ERROR:An unexpected error occurred for "https://github.com/satishpatnayak/AndroGoat", # 1 kloc: Unsupported platform for repository URL: "https://github.com/satishpatnayak/AndroGoat", # 1 kloc
+2023-11-15 07:33:58,742:ERROR:An unexpected error occurred for "https://github.com/SpiderLabs/CryptOMG", # 1 kloc: Unsupported platform for repository URL: "https://github.com/SpiderLabs/CryptOMG", # 1 kloc
+2023-11-15 07:33:58,742:ERROR:An unexpected error occurred for "https://github.com/johnmahlon/Coffee-Ratio", # 1 kloc: Unsupported platform for repository URL: "https://github.com/johnmahlon/Coffee-Ratio", # 1 kloc
+2023-11-15 07:33:58,742:ERROR:An unexpected error occurred for "https://github.com/appsecco/dvna", # 1 kloc: Unsupported platform for repository URL: "https://github.com/appsecco/dvna", # 1 kloc
+2023-11-15 07:33:58,743:ERROR:An unexpected error occurred for "https://github.com/appbrewery/BMI-Calculator-iOS13", # 1 kloc: Unsupported platform for repository URL: "https://github.com/appbrewery/BMI-Calculator-iOS13", # 1 kloc
+2023-11-15 07:33:58,743:ERROR:An unexpected error occurred for "https://github.com/commjoen/wrongsecrets", # 1 kloc: Unsupported platform for repository URL: "https://github.com/commjoen/wrongsecrets", # 1 kloc
+2023-11-15 07:33:58,743:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,743:ERROR:An unexpected error occurred for # 10-20k: Unsupported platform for repository URL: # 10-20k
+2023-11-15 07:33:58,744:ERROR:An unexpected error occurred for #"https://github.com/SapphireDb/SapphireDb",: Unsupported platform for repository URL: #"https://github.com/SapphireDb/SapphireDb",
+2023-11-15 07:33:58,744:ERROR:An unexpected error occurred for #"https://github.com/payatu/Tiredful-API",: Unsupported platform for repository URL: #"https://github.com/payatu/Tiredful-API",
+2023-11-15 07:33:58,745:ERROR:An unexpected error occurred for #"https://github.com/cschneider4711/Marathon",: Unsupported platform for repository URL: #"https://github.com/cschneider4711/Marathon",
+2023-11-15 07:33:58,745:ERROR:An unexpected error occurred for #"https://github.com/anxolerd/dvpwa",: Unsupported platform for repository URL: #"https://github.com/anxolerd/dvpwa",
+2023-11-15 07:33:58,745:ERROR:An unexpected error occurred for #"https://github.com/jerryhoff/WebGoat.NET",: Unsupported platform for repository URL: #"https://github.com/jerryhoff/WebGoat.NET",
+2023-11-15 07:33:58,746:ERROR:An unexpected error occurred for #"https://github.com/OWASP/MSTG-Hacking-Playground",: Unsupported platform for repository URL: #"https://github.com/OWASP/MSTG-Hacking-Playground",
+2023-11-15 07:33:58,746:ERROR:An unexpected error occurred for #"https://github.com/ityouknow/spring-boot-examples", # 9 kloc: Unsupported platform for repository URL: #"https://github.com/ityouknow/spring-boot-examples", # 9 kloc
+2023-11-15 07:33:58,746:ERROR:An unexpected error occurred for #"https://github.com/QingdaoU/OnlineJudge", # 10 kloc: Unsupported platform for repository URL: #"https://github.com/QingdaoU/OnlineJudge", # 10 kloc
+2023-11-15 07:33:58,746:ERROR:An unexpected error occurred for #"https://github.com/OnionBrowser/OnionBrowser", # 12 kloc: Unsupported platform for repository URL: #"https://github.com/OnionBrowser/OnionBrowser", # 12 kloc
+2023-11-15 07:33:58,746:ERROR:An unexpected error occurred for #"https://github.com/marmicode/websheep", # 16 kloc: Unsupported platform for repository URL: #"https://github.com/marmicode/websheep", # 16 kloc
+2023-11-15 07:33:58,747:ERROR:An unexpected error occurred for #"https://github.com/dotnet-architecture/eShopOnWeb",: Unsupported platform for repository URL: #"https://github.com/dotnet-architecture/eShopOnWeb",
+2023-11-15 07:33:58,747:ERROR:An unexpected error occurred for #"https://github.com/cydrobolt/polr",: Unsupported platform for repository URL: #"https://github.com/cydrobolt/polr",
+2023-11-15 07:33:58,747:ERROR:An unexpected error occurred for #"https://github.com/r-spacex/SpaceX-API", # 20 kloc: Unsupported platform for repository URL: #"https://github.com/r-spacex/SpaceX-API", # 20 kloc
+2023-11-15 07:33:58,747:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,747:ERROR:An unexpected error occurred for # 20-50k: Unsupported platform for repository URL: # 20-50k
+2023-11-15 07:33:58,747:ERROR:An unexpected error occurred for "https://github.com/shentar/jAlbum", # 24 kloc: Unsupported platform for repository URL: "https://github.com/shentar/jAlbum", # 24 kloc
+2023-11-15 07:33:58,748:ERROR:An unexpected error occurred for "https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application",: Unsupported platform for repository URL: "https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application",
+2023-11-15 07:33:58,748:ERROR:An unexpected error occurred for "https://github.com/catseye/JaC64",: Unsupported platform for repository URL: "https://github.com/catseye/JaC64",
+2023-11-15 07:33:58,748:ERROR:An unexpected error occurred for "https://github.com/timgrossmann/InstaPy",: Unsupported platform for repository URL: "https://github.com/timgrossmann/InstaPy",
+2023-11-15 07:33:58,748:ERROR:An unexpected error occurred for "https://github.com/OWASP/NodeGoat", #23 kloc: Unsupported platform for repository URL: "https://github.com/OWASP/NodeGoat", #23 kloc
+2023-11-15 07:33:58,748:ERROR:An unexpected error occurred for "https://github.com/harismuneer/Flight-Booking-System-JavaServlets_App", # 28 kloc: Unsupported platform for repository URL: "https://github.com/harismuneer/Flight-Booking-System-JavaServlets_App", # 28 kloc
+2023-11-15 07:33:58,749:ERROR:An unexpected error occurred for "https://github.com/chatwoot/chatwoot-mobile-app", # 30 kloc: Unsupported platform for repository URL: "https://github.com/chatwoot/chatwoot-mobile-app", # 30 kloc
+2023-11-15 07:33:58,749:ERROR:An unexpected error occurred for "https://github.com/s4n7h0/xvwa", # 32kloc: Unsupported platform for repository URL: "https://github.com/s4n7h0/xvwa", # 32kloc
+2023-11-15 07:33:58,749:ERROR:An unexpected error occurred for "https://github.com/xkcoding/spring-boot-demo", # 35 kloc: Unsupported platform for repository URL: "https://github.com/xkcoding/spring-boot-demo", # 35 kloc
+2023-11-15 07:33:58,749:ERROR:An unexpected error occurred for "https://github.com/kgrzybek/modular-monolith-with-ddd", # 39 kloc: Unsupported platform for repository URL: "https://github.com/kgrzybek/modular-monolith-with-ddd", # 39 kloc
+2023-11-15 07:33:58,749:ERROR:An unexpected error occurred for "https://github.com/allinurl/goaccess", # 40k: Unsupported platform for repository URL: "https://github.com/allinurl/goaccess", # 40k
+2023-11-15 07:33:58,749:ERROR:An unexpected error occurred for "https://github.com/PhilJay/MPAndroidChart", # 42 kloc: Unsupported platform for repository URL: "https://github.com/PhilJay/MPAndroidChart", # 42 kloc
+2023-11-15 07:33:58,750:ERROR:An unexpected error occurred for "https://github.com/JimBobSquarePants/ImageProcessor", #45 kloc: Unsupported platform for repository URL: "https://github.com/JimBobSquarePants/ImageProcessor", #45 kloc
+2023-11-15 07:33:58,750:ERROR:An unexpected error occurred for "https://github.com/hclproducts/AltoroJ", # 47 kloc: Unsupported platform for repository URL: "https://github.com/hclproducts/AltoroJ", # 47 kloc
+2023-11-15 07:33:58,750:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,750:ERROR:An unexpected error occurred for # 50 - 100 kloc: Unsupported platform for repository URL: # 50 - 100 kloc
+2023-11-15 07:33:58,750:ERROR:An unexpected error occurred for #"https://github.com/GetStream/Winds", # 56 kloc: Unsupported platform for repository URL: #"https://github.com/GetStream/Winds", # 56 kloc
+2023-11-15 07:33:58,750:ERROR:An unexpected error occurred for #"https://github.com/SpiderLabs/MCIR", # 62 kloc: Unsupported platform for repository URL: #"https://github.com/SpiderLabs/MCIR", # 62 kloc
+2023-11-15 07:33:58,751:ERROR:An unexpected error occurred for #"https://github.com/arachnys/cabot", #62 kloc: Unsupported platform for repository URL: #"https://github.com/arachnys/cabot", #62 kloc
+2023-11-15 07:33:58,751:ERROR:An unexpected error occurred for #"https://github.com/bilibili/ijkplayer", # 67 kloc: Unsupported platform for repository URL: #"https://github.com/bilibili/ijkplayer", # 67 kloc
+2023-11-15 07:33:58,751:ERROR:An unexpected error occurred for #"https://github.com/bither/bither-ios", # 70 kloc: Unsupported platform for repository URL: #"https://github.com/bither/bither-ios", # 70 kloc
+2023-11-15 07:33:58,751:ERROR:An unexpected error occurred for #"https://github.com/Blankj/AndroidUtilCode", # 73 kloc: Unsupported platform for repository URL: #"https://github.com/Blankj/AndroidUtilCode", # 73 kloc
+2023-11-15 07:33:58,751:ERROR:An unexpected error occurred for #"https://github.com/ethicalhack3r/DVWA", # 76 kloc: Unsupported platform for repository URL: #"https://github.com/ethicalhack3r/DVWA", # 76 kloc
+2023-11-15 07:33:58,752:ERROR:An unexpected error occurred for #"https://github.com/naudio/NAudio", # 79 kloc: Unsupported platform for repository URL: #"https://github.com/naudio/NAudio", # 79 kloc
+2023-11-15 07:33:58,752:ERROR:An unexpected error occurred for #"https://github.com/microsoft/calculator", # 81 kloc: Unsupported platform for repository URL: #"https://github.com/microsoft/calculator", # 81 kloc
+2023-11-15 07:33:58,752:ERROR:An unexpected error occurred for #"https://github.com/WebGoat/WebGoat", # 91 kloc: Unsupported platform for repository URL: #"https://github.com/WebGoat/WebGoat", # 91 kloc
+2023-11-15 07:33:58,752:ERROR:An unexpected error occurred for #"https://github.com/prateek147/DVIA", # 96 kloc: Unsupported platform for repository URL: #"https://github.com/prateek147/DVIA", # 96 kloc
+2023-11-15 07:33:58,752:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,752:ERROR:An unexpected error occurred for # 100 - 250 kloc: Unsupported platform for repository URL: # 100 - 250 kloc
+2023-11-15 07:33:58,752:ERROR:An unexpected error occurred for #"https://github.com/square/okhttp", # 100 kloc: Unsupported platform for repository URL: #"https://github.com/square/okhttp", # 100 kloc
+2023-11-15 07:33:58,753:ERROR:An unexpected error occurred for #"https://github.com/bkimminich/juice-shop", # 120 kloc: Unsupported platform for repository URL: #"https://github.com/bkimminich/juice-shop", # 120 kloc
+2023-11-15 07:33:58,753:ERROR:An unexpected error occurred for #"https://github.com/OWASP/DVSA", # 127 kloc: Unsupported platform for repository URL: #"https://github.com/OWASP/DVSA", # 127 kloc
+2023-11-15 07:33:58,753:ERROR:An unexpected error occurred for #"https://github.com/Kong/insomnia", #150 kloc: Unsupported platform for repository URL: #"https://github.com/Kong/insomnia", #150 kloc
+2023-11-15 07:33:58,753:ERROR:An unexpected error occurred for #"https://github.com/traefik/traefik", # 150 kloc: Unsupported platform for repository URL: #"https://github.com/traefik/traefik", # 150 kloc
+2023-11-15 07:33:58,753:ERROR:An unexpected error occurred for #"https://github.com/ShareX/ShareX", # 160 kloc: Unsupported platform for repository URL: #"https://github.com/ShareX/ShareX", # 160 kloc
+2023-11-15 07:33:58,754:ERROR:An unexpected error occurred for #"https://github.com/lucideus-repo/UnSAFE_Bank", # 170 kloc: Unsupported platform for repository URL: #"https://github.com/lucideus-repo/UnSAFE_Bank", # 170 kloc
+2023-11-15 07:33:58,754:ERROR:An unexpected error occurred for #"https://github.com/aspnetboilerplate/aspnetboilerplate", # 178 kloc: Unsupported platform for repository URL: #"https://github.com/aspnetboilerplate/aspnetboilerplate", # 178 kloc
+2023-11-15 07:33:58,754:ERROR:An unexpected error occurred for #"https://github.com/zxing/zxing", # 200 kloc: Unsupported platform for repository URL: #"https://github.com/zxing/zxing", # 200 kloc
+2023-11-15 07:33:58,754:ERROR:An unexpected error occurred for #"https://github.com/minio/minio", # 220 kloc: Unsupported platform for repository URL: #"https://github.com/minio/minio", # 220 kloc
+2023-11-15 07:33:58,754:ERROR:An unexpected error occurred for #"https://github.com/ng-bootstrap/ng-bootstrap", # 223 kloc: Unsupported platform for repository URL: #"https://github.com/ng-bootstrap/ng-bootstrap", # 223 kloc
+2023-11-15 07:33:58,754:ERROR:An unexpected error occurred for #"https://github.com/prateek147/DVIA-v2" # 244 kloc: Unsupported platform for repository URL: #"https://github.com/prateek147/DVIA-v2" # 244 kloc
+2023-11-15 07:33:58,755:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,755:ERROR:An unexpected error occurred for # 250 - 500 kloc: Unsupported platform for repository URL: # 250 - 500 kloc
+2023-11-15 07:33:58,755:ERROR:An unexpected error occurred for #"https://github.com/google/tink", #280 kloc: Unsupported platform for repository URL: #"https://github.com/google/tink", #280 kloc
+2023-11-15 07:33:58,755:ERROR:An unexpected error occurred for #"https://github.com/mattermost/mattermost-mobile", # 295 kloc: Unsupported platform for repository URL: #"https://github.com/mattermost/mattermost-mobile", # 295 kloc
+2023-11-15 07:33:58,755:ERROR:An unexpected error occurred for #"https://github.com/angular/angular-cli",    # 296 kloc: Unsupported platform for repository URL: #"https://github.com/angular/angular-cli",    # 296 kloc
+2023-11-15 07:33:58,756:ERROR:An unexpected error occurred for #"https://github.com/apache/zeppelin",      # 346 kloc: Unsupported platform for repository URL: #"https://github.com/apache/zeppelin",      # 346 kloc
+2023-11-15 07:33:58,756:ERROR:An unexpected error occurred for #"https://github.com/notepad-plus-plus/notepad-plus-plus", # 360 kloc: Unsupported platform for repository URL: #"https://github.com/notepad-plus-plus/notepad-plus-plus", # 360 kloc
+2023-11-15 07:33:58,756:ERROR:An unexpected error occurred for #"https://github.com/gitbucket/gitbucket",       # 373 kloc: Unsupported platform for repository URL: #"https://github.com/gitbucket/gitbucket",       # 373 kloc
+2023-11-15 07:33:58,756:ERROR:An unexpected error occurred for #"https://github.com/derekmma/crowdsourcing-platform-demo", # 383 kloc: Unsupported platform for repository URL: #"https://github.com/derekmma/crowdsourcing-platform-demo", # 383 kloc
+2023-11-15 07:33:58,756:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,757:ERROR:An unexpected error occurred for # 500 - 750 kloc: Unsupported platform for repository URL: # 500 - 750 kloc
+2023-11-15 07:33:58,757:ERROR:An unexpected error occurred for #"https://github.com/nopSolutions/nopCommerce", # 559 kloc: Unsupported platform for repository URL: #"https://github.com/nopSolutions/nopCommerce", # 559 kloc
+2023-11-15 07:33:58,757:ERROR:An unexpected error occurred for #"https://github.com/globocom/secDevLabs",       # 578 kloc: Unsupported platform for repository URL: #"https://github.com/globocom/secDevLabs",       # 578 kloc
+2023-11-15 07:33:58,757:ERROR:An unexpected error occurred for #"https://github.com/logicalhacking/DVHMA",    # 578 kloc: Unsupported platform for repository URL: #"https://github.com/logicalhacking/DVHMA",    # 578 kloc
+2023-11-15 07:33:58,757:ERROR:An unexpected error occurred for #"https://github.com/pulumi/pulumi",             # 674 kloc: Unsupported platform for repository URL: #"https://github.com/pulumi/pulumi",             # 674 kloc
+2023-11-15 07:33:58,757:ERROR:An unexpected error occurred for #"https://github.com/smartstore/SmartStoreNET",  #677 kloc: Unsupported platform for repository URL: #"https://github.com/smartstore/SmartStoreNET",  #677 kloc
+2023-11-15 07:33:58,758:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,758:ERROR:An unexpected error occurred for # 750 kloc - 1 mloc: Unsupported platform for repository URL: # 750 kloc - 1 mloc
+2023-11-15 07:33:58,758:ERROR:An unexpected error occurred for #"https://github.com/ccxt/ccxt", # 824 kloc: Unsupported platform for repository URL: #"https://github.com/ccxt/ccxt", # 824 kloc
+2023-11-15 07:33:58,758:ERROR:An unexpected error occurred for #"https://github.com/roottusk/vapi",       # 924 kloc: Unsupported platform for repository URL: #"https://github.com/roottusk/vapi",       # 924 kloc
+2023-11-15 07:33:58,759:ERROR:An unexpected error occurred for : Unsupported platform for repository URL: 
+2023-11-15 07:33:58,760:ERROR:An unexpected error occurred for # 5-7 mloc: Unsupported platform for repository URL: # 5-7 mloc
+2023-11-15 07:33:58,760:ERROR:An unexpected error occurred for #"https://github.com/kubernetes/kubernetes" # 5.8 mloc: Unsupported platform for repository URL: #"https://github.com/kubernetes/kubernetes" # 5.8 mloc
+2023-11-15 07:35:31,815:ERROR:An unexpected error occurred for # 0-10k: Unsupported platform for repository URL: # 0-10k
+2023-11-15 07:38:49,231:ERROR:Error: Received status code 404 from https://api.github.com/repos/htbridge/pivaa"
+2023-11-15 07:38:49,231:ERROR:Response text: {"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository"}
