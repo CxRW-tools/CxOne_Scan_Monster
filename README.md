@@ -99,7 +99,7 @@ docker build -t scan-monster-image .
 ```
 This command creates a Docker image named scan-monster-image.
 
-Running the Docker Container
+### Running the Docker Container
 Use the following command to run the Scan Monster tool inside a Docker container:
 
 ```bash
