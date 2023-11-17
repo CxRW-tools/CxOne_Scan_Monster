@@ -106,4 +106,3 @@ Use the following command to run the Scan Monster tool inside a Docker container
 
 docker run -v <path-to-repos-folder>:/app/ scan-monster-image --base_url <BASE_URL> --tenant_name <TENANT_NAME> --api_key <API_KEY> --repo_file /app/<repos-file> [OPTIONS]
 ```
-Replace <path-to-repos-file>, <BASE_URL>, <TENANT_NAME>, and <API_KEY> with the actual paths and values. The -v flag mounts the repos.txt file from your host machine into the container.
