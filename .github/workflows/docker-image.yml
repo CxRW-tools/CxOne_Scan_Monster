@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build -t scan-monster-image . # . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Run  the Docker Image
+      run: docker run -v $(pwd):/app/ scan-monster-image --base_url https://ast.checkmarx.net --tenant_name kelsey-na --api_key eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4YjM2NWU0Ny04ZDc0LTQxYTctYTE2MC01M2YzMDEzNWE1YjYifQ.eyJpYXQiOjE3MDAwMDA2NDcsImp0aSI6IjA1Mjg4NDZhLWQzOGItNGNhMi04OTgzLTUwZjQ1MDBiMDgwMSIsImlzcyI6Imh0dHBzOi8vaWFtLmNoZWNrbWFyeC5uZXQvYXV0aC9yZWFsbXMva2Vsc2V5LW5hIiwiYXVkIjoiaHR0cHM6Ly9pYW0uY2hlY2ttYXJ4Lm5ldC9hdXRoL3JlYWxtcy9rZWxzZXktbmEiLCJzdWIiOiI5OWMyZjJhZS1iZWIwLTQ1NGYtYjI2YS05ZWJmMzI4NTQxODMiLCJ0eXAiOiJPZmZsaW5lIiwiYXpwIjoiYXN0LWFwcCIsInNlc3Npb25fc3RhdGUiOiIzN2Q2MmNmNi0zZmYxLTQwNGEtOGQ0Ny0yOTNmMDk3ZmVmOGEiLCJzY29wZSI6IiBvZmZsaW5lX2FjY2VzcyIsInNpZCI6IjM3ZDYyY2Y2LTNmZjEtNDA0YS04ZDQ3LTI5M2YwOTdmZWY4YSJ9.6KumbHv7GKxtFudtmBvQqctc_a9GCc0T5gtnNytZ6Bo --repo_file /app/repos.txt
