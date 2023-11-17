@@ -85,3 +85,25 @@ python scan_monster.py --base_url https://cxone.example.com --tenant_name mytena
 ## Output
 
 Scan Monster will output the status of each scan initiation and any errors encountered during the process. If debug mode is enabled, it will provide detailed information about the scan configurations and the response from the Checkmarx One APIs.
+
+## Docker Container Setup
+To run Scan Monster in a Docker container, follow these steps:
+
+### Building the Docker Image
+Ensure Docker is installed on your machine. Install Docker.
+
+Navigate to the directory containing the Dockerfile and run the following command to build the Docker image:
+
+```bash
+docker build -t scan-monster-image .
+```
+This command creates a Docker image named scan-monster-image.
+
+Running the Docker Container
+Use the following command to run the Scan Monster tool inside a Docker container:
+
+```bash
+
+docker run -v <path-to-repos-file>:/app/repos.txt scan-monster-image --base_url <BASE_URL> --tenant_name <TENANT_NAME> --api_key <API_KEY> --repo_file /app/repos.txt [OPTIONS]
+```
+Replace <path-to-repos-file>, <BASE_URL>, <TENANT_NAME>, and <API_KEY> with the actual paths and values. The -v flag mounts the repos.txt file from your host machine into the container.
