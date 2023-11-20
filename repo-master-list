@@ -1,0 +1,116 @@
+# 0-10k
+"https://github.com/snoopysecurity/dvws",
+"https://github.com/Checkmarx/Goatlin",
+"https://github.com/htbridge/pivaa",
+"https://github.com/snoopysecurity/dvws-node",
+"https://github.com/dineshshetty/Android-InsecureBankv2",
+"https://github.com/CyberScions/Digitalbank",
+"https://github.com/lukencode/FluentEmail",
+"https://github.com/appsecco/dvja",
+"https://github.com/CSPF-Founder/JavaVulnerableLab",
+"https://github.com/dan7800/VulnerableAndroidAppOracle",
+"https://github.com/httpie/httpie",
+"https://github.com/williamniemiec/nForum",
+"https://github.com/losna-project/LOSNA", # 6 kloc
+"https://github.com/iknowjason/hammer",
+"https://github.com/k-tamura/easybuggy",
+"https://github.com/red-and-black/DjangoGoat",
+"https://github.com/snsttr/diwa",
+"https://github.com/RhinoSecurityLabs/cloudgoat",
+"https://github.com/psiinon/bodgeit",
+"https://github.com/m6a-UdS/dvca", 
+"https://github.com/kravietz/DropGoat",
+"https://github.com/nvisium-jack-mannino/OWASP-GoatDroid-Project", # 1 kloc
+"https://github.com/CSPF-Founder/DodoVulnerableBank", # 1 kloc
+"https://github.com/interference-security/DVWS", # 1 kloc
+"https://github.com/payatu/diva-android", # 1 kloc
+"https://github.com/yusufsefasezer/java-jsp-diary", # 1 kloc
+"https://github.com/FiloSottile/mkcert", # 1 kloc
+"https://github.com/madhuakula/kubernetes-goat", # 1 kloc
+"https://github.com/satishpatnayak/AndroGoat", # 1 kloc
+"https://github.com/SpiderLabs/CryptOMG", # 1 kloc
+"https://github.com/johnmahlon/Coffee-Ratio", # 1 kloc
+"https://github.com/appsecco/dvna", # 1 kloc
+"https://github.com/appbrewery/BMI-Calculator-iOS13", # 1 kloc
+"https://github.com/commjoen/wrongsecrets", # 1 kloc
+
+# 10-20k
+#"https://github.com/SapphireDb/SapphireDb",
+#"https://github.com/payatu/Tiredful-API",
+#"https://github.com/cschneider4711/Marathon",
+#"https://github.com/anxolerd/dvpwa",
+#"https://github.com/jerryhoff/WebGoat.NET",
+#"https://github.com/OWASP/MSTG-Hacking-Playground",
+#"https://github.com/ityouknow/spring-boot-examples", # 9 kloc
+#"https://github.com/QingdaoU/OnlineJudge", # 10 kloc
+#"https://github.com/OnionBrowser/OnionBrowser", # 12 kloc
+#"https://github.com/marmicode/websheep", # 16 kloc
+#"https://github.com/dotnet-architecture/eShopOnWeb",
+#"https://github.com/cydrobolt/polr",
+#"https://github.com/r-spacex/SpaceX-API", # 20 kloc
+
+# 20-50k
+"https://github.com/shentar/jAlbum", # 24 kloc
+"https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application",
+"https://github.com/catseye/JaC64",
+"https://github.com/timgrossmann/InstaPy",
+"https://github.com/OWASP/NodeGoat", #23 kloc
+"https://github.com/harismuneer/Flight-Booking-System-JavaServlets_App", # 28 kloc
+"https://github.com/chatwoot/chatwoot-mobile-app", # 30 kloc
+"https://github.com/s4n7h0/xvwa", # 32kloc
+"https://github.com/xkcoding/spring-boot-demo", # 35 kloc
+"https://github.com/kgrzybek/modular-monolith-with-ddd", # 39 kloc
+"https://github.com/allinurl/goaccess", # 40k
+"https://github.com/PhilJay/MPAndroidChart", # 42 kloc
+"https://github.com/JimBobSquarePants/ImageProcessor", #45 kloc
+"https://github.com/hclproducts/AltoroJ", # 47 kloc
+
+# 50 - 100 kloc
+#"https://github.com/GetStream/Winds", # 56 kloc
+#"https://github.com/SpiderLabs/MCIR", # 62 kloc
+#"https://github.com/arachnys/cabot", #62 kloc
+#"https://github.com/bilibili/ijkplayer", # 67 kloc
+#"https://github.com/bither/bither-ios", # 70 kloc
+#"https://github.com/Blankj/AndroidUtilCode", # 73 kloc
+#"https://github.com/ethicalhack3r/DVWA", # 76 kloc
+#"https://github.com/naudio/NAudio", # 79 kloc
+#"https://github.com/microsoft/calculator", # 81 kloc
+#"https://github.com/WebGoat/WebGoat", # 91 kloc
+#"https://github.com/prateek147/DVIA", # 96 kloc
+
+# 100 - 250 kloc
+#"https://github.com/square/okhttp", # 100 kloc
+#"https://github.com/bkimminich/juice-shop", # 120 kloc
+#"https://github.com/OWASP/DVSA", # 127 kloc
+#"https://github.com/Kong/insomnia", #150 kloc
+#"https://github.com/traefik/traefik", # 150 kloc
+#"https://github.com/ShareX/ShareX", # 160 kloc
+#"https://github.com/lucideus-repo/UnSAFE_Bank", # 170 kloc
+#"https://github.com/aspnetboilerplate/aspnetboilerplate", # 178 kloc
+#"https://github.com/zxing/zxing", # 200 kloc
+#"https://github.com/minio/minio", # 220 kloc
+#"https://github.com/ng-bootstrap/ng-bootstrap", # 223 kloc
+#"https://github.com/prateek147/DVIA-v2" # 244 kloc
+
+# 250 - 500 kloc
+#"https://github.com/google/tink", #280 kloc
+#"https://github.com/mattermost/mattermost-mobile", # 295 kloc
+#"https://github.com/angular/angular-cli",    # 296 kloc
+#"https://github.com/apache/zeppelin",      # 346 kloc
+#"https://github.com/notepad-plus-plus/notepad-plus-plus", # 360 kloc
+#"https://github.com/gitbucket/gitbucket",       # 373 kloc
+#"https://github.com/derekmma/crowdsourcing-platform-demo", # 383 kloc
+
+# 500 - 750 kloc
+#"https://github.com/nopSolutions/nopCommerce", # 559 kloc
+#"https://github.com/globocom/secDevLabs",       # 578 kloc
+#"https://github.com/logicalhacking/DVHMA",    # 578 kloc
+#"https://github.com/pulumi/pulumi",             # 674 kloc
+#"https://github.com/smartstore/SmartStoreNET",  #677 kloc
+
+# 750 kloc - 1 mloc
+#"https://github.com/ccxt/ccxt", # 824 kloc
+#"https://github.com/roottusk/vapi",       # 924 kloc
+
+# 5-7 mloc
+#"https://github.com/kubernetes/kubernetes" # 5.8 mloc
