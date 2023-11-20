@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build -t scan-monster-image . # . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Run  the Docker Image
-      run: docker run -v $(pwd):/app/ scan-monster-image --base_url https://ast.checkmarx.net --tenant_name kelsey-na --api_key ${{ secrets.API_KEY }} --repo_file /app/repos.txt
+      run: docker run -v $(pwd):/app/ scan-monster-image --base_url https://ast.checkmarx.net --tenant_name kelsey-na --api_key ${{ secrets.API_KEY }} --repo_file /app/repos-single.txt
