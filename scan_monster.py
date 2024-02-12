@@ -378,6 +378,7 @@ def main():
     global auth_url
     global auth_token
     global iam_base_url
+    global api_key
 
     # Parse and handle various CLI flags
     parser = argparse.ArgumentParser(description='Initiate scans on a set of repositories using Checkmarx One APIs')
