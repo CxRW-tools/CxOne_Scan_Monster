@@ -1,18 +1,21 @@
 import sys
-import json
 import requests
-import datetime
 import argparse
-from urllib.parse import urlparse
 import time
+import json
+
+import datetime
+from urllib.parse import urlparse
 import logging
 
-# Global variables
+# Standard global variables
 base_url = None
 tenant_name = None
 auth_url = None
 iam_base_url = None
+api_key = None
 auth_token = None
+token_expiration = 0 # initialize so we have to authenticate
 debug = False
 
 # Configure logging
@@ -40,38 +43,47 @@ def generate_auth_url():
         print("Error: Invalid base_url provided")
         sys.exit(1)
 
-def authenticate(api_key):
-    if auth_url is None:
-        return None
+def authenticate():
+    global auth_token, token_expiration
+
+    # if the token hasn't expired then we don't need to authenticate
+    if time.time() < token_expiration - 60:
+        if debug:
+            print("Token still valid.")
+        return
     
     if debug:
-        print("Authenticating with API...")
+        print("Authenticating with API key...")
         
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': f'Bearer {api_key}'
     }
     data = {
         'grant_type': 'refresh_token',
         'client_id': 'ast-app',
         'refresh_token': api_key
     }
-    
+
     try:
         response = requests.post(auth_url, headers=headers, data=data)
         response.raise_for_status()
         
         json_response = response.json()
-        access_token = json_response.get('access_token')
-        
-        if not access_token:
+        auth_token = json_response.get('access_token')
+        if not auth_token:
             print("Error: Access token not found in the response.")
-            return None
+            sys.exit(1)
         
+        expires_in = json_response.get('expires_in')
+        
+        if not expires_in:
+            expires_in = 600
+
+        token_expiration = time.time() + expires_in
+
         if debug:
-            print("Successfully authenticated")
-        
-        return access_token
+            print("Authenticated successfully.")
+      
     except requests.exceptions.RequestException as e:
         print(f"An error occurred during authentication: {e}")
         sys.exit(1)
@@ -183,6 +195,8 @@ def check_project_exists(project_name):
     if debug:
         print(f"Checking if project exists: {project_name}")
     
+    authenticate()
+
     headers = {
         'Accept': 'application/json; version=1.0',
         'Authorization': f'Bearer {auth_token}',
@@ -219,6 +233,8 @@ def create_project(project_name, repo_url, main_branch):
     if debug:
         print(f"Creating project: {project_name}")
     
+    authenticate()
+
     headers = {
         'Accept': 'application/json; version=1.0',
         'Authorization': f'Bearer {auth_token}',
@@ -261,6 +277,11 @@ def create_project(project_name, repo_url, main_branch):
     return project_id
 
 def start_scan(repo_info, repo_url, scan_types):
+    if debug:
+        print(f"Starting scan: {repo_url}")
+
+    authenticate()
+
     # Build the headers for the request
     headers = {
         'Accept': 'application/json; version=1.0',
@@ -421,15 +442,10 @@ def main():
         else:
             print(f"SAST scan will use the default preset")
         
-    # Authenticate to CxOne
     if args.iam_base_url:
         iam_base_url = args.iam_base_url
-    
     auth_url = generate_auth_url()
-    auth_token = authenticate(args.api_key)
-    
-    if auth_token is None:
-        return
+    api_key = args.api_key
     
     errors = 0
     started = 0
