@@ -51,7 +51,7 @@ python scan_monster.py --base_url BASE_URL --tenant_name TENANT_NAME --api_key A
        line in plain text.
 
 	example:
-`$ https://github.com/appsecco/dvja`
+`https://github.com/appsecco/dvja`
 
   
 
