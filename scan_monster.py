@@ -423,7 +423,7 @@ def main():
     parser.add_argument('--sca', action='store_true', help='Enable SCA scan.')
     parser.add_argument('--iac', action='store_true', help='Enable IaC scan.')
     parser.add_argument('--api', action='store_true', help='Enable API scan.')
-    parser.add_argument('--threads', type=int, default=1, help='Number of maximum threads to use for scanning')
+    parser.add_argument('--threads', type=int, default=1, help='Maximum number of threads to use for scan initiation')
     parser.add_argument('--debug', action='store_true', help='Enable debug output')
 
     args = parser.parse_args()
