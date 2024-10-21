@@ -7,6 +7,7 @@ import json
 import datetime
 from urllib.parse import urlparse
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Standard global variables
 base_url = None
@@ -276,6 +277,25 @@ def create_project(project_name, repo_url, main_branch):
     
     return project_id
 
+def scan_repo(repo_url, github_token, gitlab_token, bitbucket_token, azure_token, scan_types):
+    try:
+        repo_info = get_repo_info(repo_url, github_token, gitlab_token, bitbucket_token, azure_token)
+
+        if repo_info is None:
+            logging.error(f"Error fetching repo info for {repo_url}")
+            return False
+
+        repo_info['projectId'] = check_project_exists(repo_info['project_name'])
+
+        if repo_info['projectId'] is None:
+            repo_info['projectId'] = create_project(repo_info['project_name'], repo_url, repo_info['primary_branch'])
+
+        start_scan(repo_info, repo_url, scan_types)
+        return True
+    except Exception as e:
+        logging.error(f"Error scanning repo {repo_url}: {e}")
+        return False
+
 def start_scan(repo_info, repo_url, scan_types):
     if debug:
         print(f"Starting scan: {repo_url}")
@@ -403,7 +423,7 @@ def main():
     parser.add_argument('--sca', action='store_true', help='Enable SCA scan.')
     parser.add_argument('--iac', action='store_true', help='Enable IaC scan.')
     parser.add_argument('--api', action='store_true', help='Enable API scan.')
-    parser.add_argument('--space_scans', type=int, help='Number of minutes to wait between scans')
+    parser.add_argument('--threads', type=int, default=1, help='Number of maximum threads to use for scanning')
     parser.add_argument('--debug', action='store_true', help='Enable debug output')
 
     args = parser.parse_args()
@@ -451,31 +471,20 @@ def main():
     errors = 0
     started = 0
     
-    # Iterate through repos to check if projects exist, create projects (if necessary), and start scans
-    for index, repo_url in enumerate(repo_urls):
-        if(debug):
-            print(f"Preparing to scan repository {index + 1} of {len(repo_urls)}: {repo_url}")
-    
-        repo_info = get_repo_info(repo_url, github_token, gitlab_token, bitbucket_token, azure_token)
-        
-        if repo_info is None:
-            errors += 1
-            print(f"Encountered error fetching info from repository {repo_url}; error logged")
-            continue  # Skip to the next repository if repo_info is None
-        
-        repo_info['projectId'] = check_project_exists(repo_info['project_name'])
+    with ThreadPoolExecutor(max_workers=args.threads) as executor:
+        futures = {executor.submit(scan_repo, repo_url, args.github_token, args.gitlab_token, args.bitbucket_token, args.azure_token, scan_types): repo_url for repo_url in repo_urls}
 
-        if repo_info['projectId'] is None:
-            repo_info['projectId'] = create_project(repo_info['project_name'], repo_url, repo_info['primary_branch'])
-
-        start_scan(repo_info, repo_url, scan_types)
-        started += 1
-
-        # If space_scans is set and it's not the last repository, wait the specified time
-        if args.space_scans and index < len(repo_urls) - 1:
-            if debug:
-                print(f"Waiting {args.space_scans} minute(s) before starting the next scan...")
-            time.sleep(args.space_scans * 60)  # Wait time is in seconds, so multiply by 60
+        for future in as_completed(futures):
+            repo_url = futures[future]
+            try:
+                result = future.result()
+                if result:
+                    started += 1
+                else:
+                    errors += 1
+            except Exception as exc:
+                logging.error(f"{repo_url} generated an exception: {exc}")
+                errors += 1
     
     if errors > 0:
         print(f"Errors encountered with {errors} repositories; check error log for details")
