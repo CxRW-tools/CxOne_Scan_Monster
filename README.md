@@ -31,7 +31,7 @@ python scan_monster.py --base_url BASE_URL --tenant_name TENANT_NAME --api_key A
 - `--sca`: Enable SCA scan. (Flag, no value required)
 - `--iac`: Enable IaC scan. (Flag, no value required)
 - `--api`: Enable API scan. (Flag, no value required)
-- `--space_scans MINUTES`: Define a waiting period in minutes between each scan.
+- `--threads THREADS`: Maximum number of threads to use for scan initiation.
 - `--debug`: Enable debug output. (Flag, no value required)
 
 
